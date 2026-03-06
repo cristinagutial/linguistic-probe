@@ -1,0 +1,214 @@
+{
+  "metadata": {
+    "description": "Minimal pair sentences for cross-lingual NPI probing of mBERT (English & Spanish)",
+    "phenomena": ["npi_licensing"],
+    "languages": ["en", "es"],
+    "format": "Each pair has a licensed (grammatical) and unlicensed (ungrammatical) NPI context. [MASK] is placed on the NPI word itself.",
+    "background": "Negative Polarity Items (NPIs) are words/expressions that are grammatical only in certain licensing contexts (negation, questions, conditionals, etc.). Testing whether mBERT respects these constraints probes long-distance syntactic/semantic sensitivity.",
+    "npi_types": {
+      "en": ["any", "ever", "at all", "yet"],
+      "es": ["nadie", "nunca", "jamás", "ningún", "en absoluto"]
+    },
+    "licensing_contexts": {
+      "negation": "NPI appears under negation (the canonical licensor)",
+      "question": "NPI appears in a yes/no question (also licenses NPIs)",
+      "conditional": "NPI appears in the if-clause of a conditional",
+      "negation_long_distance": "Negation in matrix clause licenses NPI in embedded clause",
+      "unlicensed": "NPI appears in a plain affirmative clause (ungrammatical)"
+    }
+  },
+  "pairs": [
+    {
+      "id": "en_npi_01",
+      "language": "en",
+      "phenomenon": "npi_licensing",
+      "npi": "any",
+      "licensor": "negation",
+      "grammatical":   "She doesn't have [MASK] money left.",
+      "ungrammatical": "She does have [MASK] money left.",
+      "target_grammatical":   "any",
+      "target_ungrammatical": "any",
+      "note": "Canonical NPI 'any' licensed by sentential negation 'doesn't'"
+    },
+    {
+      "id": "en_npi_02",
+      "language": "en",
+      "phenomenon": "npi_licensing",
+      "npi": "ever",
+      "licensor": "negation",
+      "grammatical":   "He has never ever been to Paris.",
+      "ungrammatical": "He has always ever been to Paris.",
+      "target_grammatical":   "ever",
+      "target_ungrammatical": "ever",
+      "note": "NPI 'ever' licensed by 'never'; blocked in affirmative 'always' context"
+    },
+    {
+      "id": "en_npi_03",
+      "language": "en",
+      "phenomenon": "npi_licensing",
+      "npi": "yet",
+      "licensor": "negation",
+      "grammatical":   "They haven't finished the project [MASK].",
+      "ungrammatical": "They have finished the project [MASK].",
+      "target_grammatical":   "yet",
+      "target_ungrammatical": "yet",
+      "note": "Temporal NPI 'yet' requires negation; 'already' is the affirmative counterpart"
+    },
+    {
+      "id": "en_npi_04",
+      "language": "en",
+      "phenomenon": "npi_licensing",
+      "npi": "any",
+      "licensor": "question",
+      "grammatical":   "Did you find [MASK] mistakes in the report?",
+      "ungrammatical": "You found [MASK] mistakes in the report.",
+      "target_grammatical":   "any",
+      "target_ungrammatical": "any",
+      "note": "NPI 'any' licensed in yes/no question; unlicensed in plain affirmative"
+    },
+    {
+      "id": "en_npi_05",
+      "language": "en",
+      "phenomenon": "npi_licensing",
+      "npi": "ever",
+      "licensor": "question",
+      "grammatical":   "Has she [MASK] seen a shooting star?",
+      "ungrammatical": "She has [MASK] seen a shooting star.",
+      "target_grammatical":   "ever",
+      "target_ungrammatical": "ever",
+      "note": "NPI 'ever' licensed in polar question; unlicensed in affirmative declarative"
+    },
+    {
+      "id": "en_npi_06",
+      "language": "en",
+      "phenomenon": "npi_licensing",
+      "npi": "any",
+      "licensor": "conditional",
+      "grammatical":   "If you have [MASK] questions, please ask.",
+      "ungrammatical": "Because you have [MASK] questions, please ask.",
+      "target_grammatical":   "any",
+      "target_ungrammatical": "any",
+      "note": "NPI 'any' licensed in if-clause; not licensed under causal 'because'"
+    },
+    {
+      "id": "en_npi_07",
+      "language": "en",
+      "phenomenon": "npi_licensing",
+      "npi": "at all",
+      "licensor": "negation",
+      "grammatical":   "I don't care about this [MASK].",
+      "ungrammatical": "I really care about this [MASK].",
+      "target_grammatical":   "at all",
+      "target_ungrammatical": "at all",
+      "note": "Strong NPI 'at all' strictly requires negation"
+    },
+    {
+      "id": "en_npi_08",
+      "language": "en",
+      "phenomenon": "npi_licensing",
+      "npi": "any",
+      "licensor": "negation_long_distance",
+      "grammatical":   "The teacher didn't think that [MASK] student had cheated.",
+      "ungrammatical": "The teacher thought that [MASK] student had cheated.",
+      "target_grammatical":   "any",
+      "target_ungrammatical": "any",
+      "note": "Long-distance: negation in matrix clause licenses NPI in embedded clause"
+    },
+    {
+      "id": "es_npi_01",
+      "language": "es",
+      "phenomenon": "npi_licensing",
+      "npi": "nadie",
+      "licensor": "negation",
+      "grammatical":   "No ha llamado [MASK] esta mañana.",
+      "ungrammatical": "Ha llamado [MASK] esta mañana.",
+      "target_grammatical":   "nadie",
+      "target_ungrammatical": "nadie",
+      "note": "NPI 'nadie' (nobody) licensed by preverbal 'no'; ungrammatical in affirmative"
+    },
+    {
+      "id": "es_npi_02",
+      "language": "es",
+      "phenomenon": "npi_licensing",
+      "npi": "nunca",
+      "licensor": "negation",
+      "grammatical":   "No he estado [MASK] en Tokio.",
+      "ungrammatical": "He estado [MASK] en Tokio.",
+      "target_grammatical":   "nunca",
+      "target_ungrammatical": "nunca",
+      "note": "NPI 'nunca' (never) licensed by sentential negation 'no'"
+    },
+    {
+      "id": "es_npi_03",
+      "language": "es",
+      "phenomenon": "npi_licensing",
+      "npi": "jamás",
+      "licensor": "negation",
+      "grammatical":   "No lo haré [MASK].",
+      "ungrammatical": "Lo haré [MASK].",
+      "target_grammatical":   "jamás",
+      "target_ungrammatical": "jamás",
+      "note": "Strong NPI 'jamás' (ever/never) requires negation; more emphatic than 'nunca'"
+    },
+    {
+      "id": "es_npi_04",
+      "language": "es",
+      "phenomenon": "npi_licensing",
+      "npi": "nadie",
+      "licensor": "question",
+      "grammatical":   "¿Ha llamado [MASK] esta mañana?",
+      "ungrammatical": "Ha llamado [MASK] esta mañana.",
+      "target_grammatical":   "nadie",
+      "target_ungrammatical": "nadie",
+      "note": "NPI 'nadie' licensed in polar question — mirrors en_npi_04"
+    },
+    {
+      "id": "es_npi_05",
+      "language": "es",
+      "phenomenon": "npi_licensing",
+      "npi": "ningún",
+      "licensor": "negation",
+      "grammatical":   "No tengo [MASK] problema con eso.",
+      "ungrammatical": "Tengo [MASK] problema con eso.",
+      "target_grammatical":   "ningún",
+      "target_ungrammatical": "ningún",
+      "note": "NPI determiner 'ningún' (no/any) licensed by negation"
+    },
+    {
+      "id": "es_npi_06",
+      "language": "es",
+      "phenomenon": "npi_licensing",
+      "npi": "nunca",
+      "licensor": "conditional",
+      "grammatical":   "Si [MASK] tienes dudas, pregunta.",
+      "ungrammatical": "Porque [MASK] tienes dudas, pregunta.",
+      "target_grammatical":   "nunca",
+      "target_ungrammatical": "nunca",
+      "note": "NPI 'nunca' licensed in si-clause (conditional); not under causal 'porque'"
+    },
+    {
+      "id": "es_npi_07",
+      "language": "es",
+      "phenomenon": "npi_licensing",
+      "npi": "nadie",
+      "licensor": "negation_long_distance",
+      "grammatical":   "La profesora no creyó que [MASK] hubiera copiado.",
+      "ungrammatical": "La profesora creyó que [MASK] hubiera copiado.",
+      "target_grammatical":   "nadie",
+      "target_ungrammatical": "nadie",
+      "note": "Long-distance NPI licensing across clause boundary — mirrors en_npi_08"
+    },
+    {
+      "id": "es_npi_08",
+      "language": "es",
+      "phenomenon": "npi_licensing",
+      "npi": "en absoluto",
+      "licensor": "negation",
+      "grammatical":   "No me importa [MASK].",
+      "ungrammatical": "Me importa [MASK].",
+      "target_grammatical":   "absoluto",
+      "target_ungrammatical": "absoluto",
+      "note": "Strong idiomatic NPI 'en absoluto' (at all) — direct parallel to English en_npi_07"
+    }
+  ]
+}
