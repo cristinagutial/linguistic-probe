@@ -1,8 +1,8 @@
 # 🔬 Cross-lingual NPI Probe
 
-**Does mBERT "know" when a Negative Polarity Item is licensed — and does it know it equally in English and Spanish?**
+**Does mBERT "know" when a Negative Polarity Item is licensed and does it know it equally in English and Spanish?**
 
-This project probes `bert-base-multilingual-cased` (mBERT) on **Negative Polarity Item (NPI) licensing** — a linguistically rich phenomenon that requires sensitivity to long-distance syntactic and semantic relationships, not just local patterns.
+This project probes `bert-base-multilingual-cased` (mBERT) on **Negative Polarity Item (NPI) licensing** a linguistically rich phenomenon that requires sensitivity to long-distance syntactic and semantic relationships, not just local patterns.
 
 This connects to a core question in current NLP research: *what do language models actually learn about grammar, and does it generalize cross-lingually?*
 
@@ -10,7 +10,7 @@ This connects to a core question in current NLP research: *what do language mode
 
 ## What is an NPI?
 
-NPIs are expressions that are grammatical **only** in certain *licensing contexts* — canonically negation, but also polar questions and conditionals:
+NPIs are expressions that are grammatical **only** in certain *licensing contexts* canonically negation, but also polar questions and conditionals:
 
 | Licensed ✓ | Unlicensed ✗ |
 |---|---|
@@ -19,7 +19,7 @@ NPIs are expressions that are grammatical **only** in certain *licensing context
 | No ha llamado **nadie**. | ~~Ha llamado **nadie**.~~ |
 | ¿Ha llamado **nadie**? | — |
 
-Crucially, the licensor can appear far from the NPI — *"The teacher didn't think that **any** student had cheated"* — which means probing NPIs tests **long-distance syntactic/semantic sensitivity**.
+Crucially, the licensor can appear far from the NPI (*"The teacher didn't think that **any** student had cheated"*) which means probing NPIs tests **long-distance syntactic/semantic sensitivity**.
 
 ---
 
@@ -31,7 +31,7 @@ Crucially, the licensor can appear far from the NPI — *"The teacher didn't thi
 | Spanish | *nadie*, *nunca*, *ningún* | *jamás*, *en absoluto* |
 
 **Weak NPIs** are licensed in all downward-entailing contexts.  
-**Strong NPIs** require strict negation — they are more restricted and thus harder to model.
+**Strong NPIs** require strict negation: they are more restricted and thus harder to model.
 
 ---
 
