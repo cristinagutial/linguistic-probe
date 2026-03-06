@@ -6,7 +6,7 @@ Cross-lingual NPI (Negative Polarity Item) probe using mBERT.
 Background
 ----------
 NPIs are words like "any", "ever", "yet" (EN) or "nadie", "nunca", "jamás" (ES)
-that are grammatical only in certain *licensing* contexts — negation, questions,
+that are grammatical only in certain *licensing* contexts like negation, questions,
 and conditionals. Crucially, the licensor may appear far from the NPI itself
 (e.g. "The teacher didn't think that ANY student had cheated"), so this probe
 tests long-distance syntactic/semantic sensitivity, not just local patterns.
@@ -18,7 +18,7 @@ For each pair, [MASK] is placed at the NPI position. We compare:
     Δ log p = log p(NPI | licensed context) − log p(NPI | unlicensed context)
 
 If Δ > 0, mBERT assigns higher probability to the NPI in the grammatically
-correct (licensed) context — a "pass". Because both sentences use the *same*
+correct (licensed) context so, a "pass". Because both sentences use the *same*
 target word, this isolates exactly the effect of the licensing context.
 
 Multi-token NPIs (e.g. "en absoluto", "at all") are handled via iterative
